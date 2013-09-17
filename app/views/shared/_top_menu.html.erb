@@ -1,0 +1,28 @@
+<!--<nav class="top-bar hide-for-small" style="">-->
+<nav>
+          <ul class="title-area">
+            <!-- Title Area -->
+            <!-- <li class="name">
+              <h1>
+                <a href="">
+                  Kiwi Ads
+                </a>
+              </h1>
+            </li>-->
+            <li class="toggle-topbar"><a href="#"></a></li>
+          </ul>
+          
+        <section class="top-bar-section">
+            <!-- Right Nav Section -->
+            <ul class="right">
+            <% Adcategory.roots.each do |adcategory| %>
+            	<li class="has-dropdown not-click">
+                	<a href="#"><%= adcategory.name %></a>
+                	<ul class="dropdown"><li class="title back js-generated"><h5><a href="#">« Back</a></h5></li>
+	                  <%= render 'shared/sub_categories', categories: adcategory.descendants.arrange %>
+                	</ul>
+             	</li>				
+				<% end %>                        
+            </ul>
+          </section>
+	</nav>

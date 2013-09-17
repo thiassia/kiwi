@@ -1,0 +1,91 @@
+<!--<h1><small>All Ads category</small></h1>-->
+<% content_for :title, "Kiwi Ads" %>
+<div id="slide" class="row">	
+<div class="large-12 large-centered columns">
+	<ul data-orbit>
+  <li>
+    <%=image_tag ("demo1.jpg")%>
+    <div class="orbit-caption">Nature</div>
+  </li>
+  <li>
+    <%=image_tag ("demo2.jpg")%>
+    <div class="orbit-caption">Tourism and Other</div>
+  </li>
+  <li>
+    <%=image_tag ("demo3.jpg")%>
+    <div class="orbit-caption">Accomodations</div>
+  </li>
+</ul>
+</div>
+</div>
+<hr>
+
+<div class="row" style="position:absolute; top:250px; left:25px;">
+<div class="large-12 columns">
+  <%=render "shared/new_ad_horizontal"%>	
+</div>     
+</div> 
+
+</div>
+
+<footer class="row">
+  <div class="large-3 small-12 columns">
+      <h5><a>About</a></h5>      
+  </div>
+  <div class="large-3 small-12 columns">
+      <h5><a>FAQ</a></h5>      
+  </div>
+  <div class="large-3 small-12 columns">
+      <h5><a>Kiwi blog</a></h5>      
+  </div>
+ <div class="large-3 small-12 columns">
+      <h5><a>Email Us</a></h5>      
+  </div>
+          
+ </footer>
+ 
+    <!-- End Footer -->
+<!--
+<div class="row">
+<div class="large-12 columns">
+<div class="large-10 large-centered columns">
+<% @adcategories.roots.each do |adcategory| %>
+<div class="small-2 large-4 columns">	
+		<%= label_tag(adcategory.name)%>
+		<%= render 'shared/sub_categories', categories: adcategory.descendants.arrange %>
+</div>
+<% end %>
+</div>
+</div>
+</div>-->
+<!--
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Parent Id</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @adcategories.each do |adcategory| %>
+      <tr>
+        <td><%= adcategory.name %></td>
+        <td><%= adcategory.description %></td>
+        <td><%= adcategory.parent_id %></td>
+        <td><%= link_to 'Show', adcategory %></td>
+        <td><%= link_to 'Edit', edit_adcategory_path(adcategory) %></td>
+        <td><%= link_to 'Destroy', adcategory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Adcategory', new_adcategory_path %>
+-->

@@ -1,0 +1,111 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+<div class="large-12 columns">
+<div class="large-7 columns">
+<div class="section-container auto " data-section>
+  <section>
+    <p class="title" data-section-title><a href="#panel1"><i class="fi-folder"></i>&nbsp;Ad Information</a></p>
+    <div class="content" data-section-content>
+    	<div class="small-8">
+	        <p>
+			  <strong>Name:</strong>
+			  <%= @ad.name %>
+			</p>
+			
+			<p>
+			  <strong>Adcategory:</strong>
+			  <%= @ad.adcategory %>
+			</p>
+			
+			<p>
+			  <strong>description:</strong>
+			  <%= @ad.description %>
+			</p>
+			
+			<p>
+			  <strong>price:</strong>
+			  <%= @ad.price %>
+			</p>
+	  </div>
+    </div>
+  </section>
+  <section>
+    <p class="title" data-section-title><a href="#panel2"><i class="fi-photo"></i>&nbsp;Photo Gallery</a></p>
+    <div class="content" data-section-content>
+      <ul class="clearing-thumbs" data-clearing>
+	  <li><a href="path/to/your/img"><img src="path/to/your/img-th"></a></li>
+	  <li><a href="path/to/your/img"><img src="path/to/your/img-th"></a></li>
+	  <li><a href="path/to/your/img"><img src="path/to/your/img-th"></a></li>
+	 </ul>
+    </div>
+  </section>
+  <section>
+    <p class="title" data-section-title><a href="#panel3"><i class="fi-mail"></i>&nbsp;Contact Information</a></p>
+    <div class="content" data-section-content>
+    	<div class="small-8">    		
+        	<%= render 'ad_email/form' %>        	
+    	</div>
+  </section>
+</div>	
+</div>	
+<div class="large-5 columns">
+	<h5 class="subheader">Sponsored Links</h5>
+</div>
+</div>	
+</div>	  
+<div class="clear"/>
+<div class="row">
+	<div class="large-12 columns">
+		<div class="large-7 columns">
+			<h5 class="subheader">Ads by category</h5>
+			<hr>
+		</div>
+		<div class="large-5 columns">
+			<h5 class="subheader">Similar Ads</h5>
+			<hr>
+		</div>
+	</div>
+</div>
+<div class="clear"/>
+<div class="row">
+	<div class="large-12 columns">
+		<div class="large-7 columns">
+			<h5 class="subheader">Ads by location</h5>
+			<hr>
+		</div>
+		<div class="large-5 columns">
+			<h5 class="subheader">social hangout</h5>
+			<div>
+				<a href="#" class="fc-webicon facebook">Like us on Facebook</a>				
+				<a href="#" class="fc-webicon rss small">Keep up with us via RSS</a>
+				<a href="#" class="fc-webicon twitter">Follow us on twitter</a>
+				<a href="#" class="fc-webicon youtube small">Watch us on YouTube</a>
+			</div>
+			<hr>
+		</div>
+	</div>
+</div>
+<!--
+<p>
+  <strong>Name:</strong>
+  <%= @ad.name %>
+</p>
+
+<p>
+  <strong>Adcategory:</strong>
+  <%= @ad.adcategory %>
+</p>
+
+<p>
+  <strong>description:</strong>
+  <%= @ad.description %>
+</p>
+
+<p>
+  <strong>price:</strong>
+  <%= @ad.price %>
+</p>
+
+<%= link_to 'Edit', edit_ad_path(@ad) %> |
+<%= link_to 'Back', ads_path %>
+-->

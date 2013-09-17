@@ -1,0 +1,70 @@
+<%= form_for(@ad, :html => {:class => "custom"}) do |f| %>
+<div class="row">
+ <div class="large-12 columns">
+	  <% if @ad.errors.any? %>
+	    <div id="error_explanation">
+	      <h2><%= pluralize(@ad.errors.count, "error") %> prohibited this ad from being saved:</h2>
+	
+	      <ul>
+	      <% @ad.errors.full_messages.each do |msg| %>
+	        <li><%= msg %></li>
+	      <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
+	<div class="section-container auto" data-section>
+  <section>
+    <p class="title" data-section-title><a href="#panel1">Ad Information</a></p>
+    <div class="content" data-section-content>
+    	<div class="small-8">
+        <div class="field">
+	    <%= f.label :name %><br>
+	    <%= f.text_field :name %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :description %><br>
+	    <%= f.text_area :description %>
+	  </div>
+	   <div class="field">
+	    <%= f.label :price %><br>
+	    <%= f.text_field :price %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :adcategory %><br>
+	    <%= f.collection_select :adcategory_id, Adcategory.find(:all), :id, :name, :prompt => "Select a Category" %>
+	  </div>
+	  </div>
+    </div>
+  </section>
+  <section>
+    <p class="title" data-section-title><a href="#panel2">Photo Gallery</a></p>
+    <div class="content" data-section-content>
+      <ul class="clearing-thumbs" data-clearing>
+	  <li><a href="path/to/your/img"><img src="path/to/your/img-th"></a></li>
+	  <li><a href="path/to/your/img"><img src="path/to/your/img-th"></a></li>
+	  <li><a href="path/to/your/img"><img src="path/to/your/img-th"></a></li>
+	 </ul>
+    </div>
+  </section>
+  <section>
+    <p class="title" data-section-title><a href="#panel3">Contact Information</a></p>
+    <div class="content" data-section-content>
+    	<div class="small-8">
+        <div class="field">
+	    <%= f.label :contact_email %><br>
+	    <%= f.text_field :contact_email %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :contact_phone %><br>
+	    <%= f.text_area :contact_phone %>
+	  </div>
+	  <div class="actions">
+	    <%= f.submit 'Create Ad', :class => 'small button' %>
+	  </div>
+    </div>
+  </section>
+
+</div>	  
+	 </div>
+ </div>
+<% end %>

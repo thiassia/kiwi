@@ -1,0 +1,35 @@
+<div class="container">
+<div class="row">	
+    <div class="large-12 columns">      
+      	<div class="small-4 columns">        	
+          <blockquote>
+			  <p><%= link_to "WELCOME", root_url%><cite>PostUp.com</cite></p>
+		 </blockquote>
+        </div>
+        <div class="small-6 columns">        	
+          <input type="text" placeholder="Search for ads">
+        </div>
+        <div class="small-2 columns">
+          <a href="#" class="button prefix">Search</a>
+        </div>
+     </div>      
+	
+	<div class="large-12 columns">	    
+    	 <ul class="right button-group">	    	 	
+	     </li><a href="#" data-reveal-id="frm_new_ad" class="button small">Create Ad</a></li> 	 
+		 <% if current_user %>
+	          <!--</li><%= current_user.email%></li>-->
+	          </li><%= link_to "Log Out", logout_path, :class => "button small secondary"%></li>
+	       <% else %>
+	          </li><a href="#" data-reveal-id="frm_new_user" class="button small">Register</a>
+	          </li><a href="#" data-reveal-id="frm_login" class="button small secondary">Login</a></li>          
+	       <% end %>	       
+	       </li><%= link_to "Contact Us", root_url, :class => "button small secondary"%></li>       
+	       </li><%= link_to "Swahili", root_url, :class => "button small secondary"%></li> 
+	       </li><%= link_to "French", root_path, :class => "button small secondary"%></li>	       
+		 </ul>	
+	</div>
+	<hr>  
+</div>
+</div>
+</div>

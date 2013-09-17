@@ -1,0 +1,32 @@
+<% content_for :title, @adcategory.name %>
+<p id="notice"><%= notice %></p>
+<ul id="menu">
+	<% Adcategory.roots.each do |category| %>
+		<li> <%= link_to category.name, category%></li>
+	<%end%>
+</ul>
+<div id="submenu">
+  <%= render 'shared/sub_categories', categories: @adcategory.root.descendants.arrange %>
+</div>
+
+<ul id="crumb-container crumbs">
+  <% @adcategory.ancestors.each do |category| %>
+   <li><%= link_to category.name, category %> | </li>
+  <% end %>
+</ul>
+
+<p>
+  <strong>Name:</strong>
+  <%= @adcategory.name %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @adcategory.description %>
+</p>
+<p>
+  <strong>Parent ID:</strong>
+  <%= @adcategory.parent_id %>
+</p>
+
+<%= link_to 'Edit', edit_adcategory_path(@adcategory) %> |
+<%= link_to 'Back', adcategories_path %>

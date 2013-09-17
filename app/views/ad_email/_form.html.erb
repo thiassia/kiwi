@@ -1,0 +1,21 @@
+<!--<h1><small>Ad Email New</small></h1>-->
+
+<% flash.each do |key, msg| %>
+  <%= content_tag :div, msg, :id => key %>
+<% end %>
+<%= form_tag ad_email_path do %>
+  <div class="field">
+    <%= label_tag :your_email_address %><br />
+    <% if current_ad and current_user%>		          
+	<%= text_field_tag :email, params[:email], :value => current_user.email%>
+	<% else %>		          
+	<%= text_field_tag :email, params[:email]%>
+	<% end %>
+    
+  </div>
+  <div class="field">
+    <%= label_tag :message %><br />
+    <%= text_area_tag :message %>
+  </div>
+  <div class="actions"><%= submit_tag "Send email", :class =>"small button" %></div>
+<% end %>

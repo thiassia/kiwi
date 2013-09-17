@@ -1,0 +1,43 @@
+<%@ad = Ad.new%>
+<%= form_for(@ad, :html => {:class => "custom"}) do |f| %>
+<div class="row">
+ <div class="large-12 columns">
+	  <% if @ad.errors.any? %>
+	    <div id="error_explanation">
+	      <h2><%= pluralize(@ad.errors.count, "error") %> prohibited this ad from being saved:</h2>
+	
+	      <ul>
+	      <% @ad.errors.full_messages.each do |msg| %>
+	        <li><%= msg %></li>
+	      <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
+	<!--<div class="large-2 columns">-->
+	  <div class="field">	    
+	    <%= f.text_field :name, :placeholder=> "Ad Name" %>
+	  </div>
+	 <!--</div>-->
+	 <!--<div class="large-3 columns">-->
+	  <div class="field">	    
+	    <%= f.text_field :description, :placeholder => "Description" %>
+	  </div>
+	  <!--</div>-->
+	  <!--<div class="large-2 columns">-->
+	   <div class="field">	    
+	    <%= f.text_field :price, :placeholder => "Price" %>
+	  </div>
+	  <!--</div>-->
+	  <!--<div class="large-3 columns">-->
+	  <div class="field">	  		    
+	    <%= f.collection_select :adcategory_id, Adcategory.find(:all), :id, :name, :prompt => "Select a Category" %>
+	  </div>
+	  <!--</div>-->
+	  <!--<div class="large-2 columns">-->
+	  <div class="actions">
+	    <%= f.submit 'Create Ad', :class => 'small button' %>
+	  </div>
+	  <!--</div>-->
+	 </div>
+ </div>
+<% end %>
